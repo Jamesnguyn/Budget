@@ -4,5 +4,9 @@
   "main": "index.js",
   "repository": "https://github.com/Jamesnguyn/React.git",
   "author": "James Nguyen <jameztnguyen@hotmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1"
+  }
 }
