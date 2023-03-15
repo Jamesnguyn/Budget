@@ -1,91 +1,29 @@
 'use strict';
 
-console.log("App js running");
-
-var app = {
-  title: 'Indecision App',
-  subTitle: 'paragraph',
-  options: ['One', 'Two']
+var square = function square(x) {
+  return x * x;
 };
 
-var template = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    ' ',
-    app.title,
-    ' '
-  ),
-  app.subTitle && React.createElement(
-    'p',
-    null,
-    ' ',
-    app.subTitle,
-    ' '
-  ),
-  React.createElement(
-    'p',
-    null,
-    ' ',
-    app.options.length > 0 ? 'Here are your options' : 'No options',
-    ' '
-  ),
-  React.createElement(
-    'ol',
-    null,
-    React.createElement(
-      'li',
-      null,
-      ' one '
-    ),
-    React.createElement(
-      'li',
-      null,
-      ' two '
-    )
-  )
-);
+console.log(square(8));
 
-var user = {
-  name: 'James',
-  age: '25',
-  location: 'San Diego'
+// const squareArrow = (x) => {
+//   return x * x;
+// };
+
+var squareArrow = function squareArrow(x) {
+  return x * x;
 };
 
-function getLocation(location) {
-  if (location) {
-    return React.createElement(
-      'p',
-      null,
-      ' Location: ',
-      location,
-      ' '
-    );
-  }
-}
+console.log(squareArrow(8));
 
-var template2 = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    ' ',
-    user.name ? user.name : 'Anonymous',
-    ' '
-  ),
-  user.age && user.age >= 18 && React.createElement(
-    'p',
-    null,
-    ' Age: ',
-    user.age,
-    ' '
-  ),
-  getLocation(user.location)
-);
+//Challenge
+var getFirstName = function getFirstName(x) {
+  return x.split(' ')[0];
+};
 
-var appRoot = document.getElementById('app');
+var getFirstName2 = function getFirstName2(x) {
+  return x.split(' ')[0];
+};
 
-ReactDOM.render(template, appRoot);
+console.log(getFirstName('James Nguyen'));
+console.log(getFirstName2('James Nguyen'));
