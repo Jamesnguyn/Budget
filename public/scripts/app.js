@@ -1,29 +1,96 @@
 'use strict';
 
-var square = function square(x) {
-  return x * x;
+console.log("App js running");
+
+var app = {
+  title: 'Indecision App',
+  subTitle: 'paragraph',
+  options: ['One', 'Two']
 };
 
-console.log(square(8));
+var template = React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    ' ',
+    app.title,
+    ' '
+  ),
+  app.subTitle && React.createElement(
+    'p',
+    null,
+    ' ',
+    app.subTitle,
+    ' '
+  ),
+  React.createElement(
+    'p',
+    null,
+    ' ',
+    app.options.length > 0 ? 'Here are your options' : 'No options',
+    ' '
+  ),
+  React.createElement(
+    'ol',
+    null,
+    React.createElement(
+      'li',
+      null,
+      ' one '
+    ),
+    React.createElement(
+      'li',
+      null,
+      ' two '
+    )
+  )
+);
 
-// const squareArrow = (x) => {
-//   return x * x;
-// };
+var currentCount = 0;
 
-var squareArrow = function squareArrow(x) {
-  return x * x;
+var increment = function increment() {
+  return currentCount++;
 };
 
-console.log(squareArrow(8));
-
-//Challenge
-var getFirstName = function getFirstName(x) {
-  return x.split(' ')[0];
+var decrement = function decrement() {
+  return currentCount--;
 };
 
-var getFirstName2 = function getFirstName2(x) {
-  return x.split(' ')[0];
+var reset = function reset() {
+  return currentCount = 0;
 };
 
-console.log(getFirstName('James Nguyen'));
-console.log(getFirstName2('James Nguyen'));
+var templateTwo = React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    'Count: ',
+    currentCount,
+    ' '
+  ),
+  React.createElement(
+    'button',
+    { onClick: increment },
+    ' + 1 '
+  ),
+  React.createElement(
+    'button',
+    { onClick: reset },
+    ' RESET '
+  ),
+  React.createElement(
+    'button',
+    { onClick: decrement },
+    ' - 1 '
+  )
+);
+
+console.log(templateTwo);
+
+var appRoot = document.getElementById('app');
+
+ReactDOM.render(templateTwo, appRoot);

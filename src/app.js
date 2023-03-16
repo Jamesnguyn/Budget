@@ -18,26 +18,31 @@ const template = (
   </div>
 );
 
-const user = {
-  name: 'James',
-  age: '25',
-  location: 'San Diego',
+let currentCount = 0;
+
+const increment = () => {
+  return currentCount++;
 };
 
-function getLocation(location) {
-  if(location) {
-    return <p> Location: {location} </p>;
-  }
-}
+const decrement = () => {
+  return currentCount--;
+};
 
-const template2 = (
-  <div> 
-    <h1> { user.name ? user.name : 'Anonymous' } </h1> 
-    { (user.age && user.age >= 18) && <p> Age: {user.age} </p> }
-    { getLocation(user.location) }
+const reset = () => {
+  return currentCount = 0;
+};
+
+const templateTwo = (
+  <div>
+    <h1>Count: {currentCount} </h1>
+    <button onClick = { increment } > + 1 </button>
+    <button onClick = { reset } > RESET </button>
+    <button onClick = { decrement } > - 1 </button>
   </div>
 );
 
+console.log(templateTwo);
+
 const appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
