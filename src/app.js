@@ -6,50 +6,43 @@ const app = {
   options: ['One', 'Two'],
 };
 
-const template = (
-  <div> 
-    <h1> { app.title } </h1> 
-    { app.subTitle && <p> {app.subTitle} </p> }
-    <p> { app.options.length > 0 ? 'Here are your options' : 'No options' } </p>
-    <ol>
-      <li> one </li>
-      <li> two </li>
-    </ol>
-  </div>
-);
+const onFormSubmit = (e) => {
+  e.preventDefault();
+  const option = e.target.elements.option.value;
 
-let currentCount = 0;
-
-const increment = () => {
-  currentCount++;
-  renderCounterApp();
+  if(option){
+    app.options.push(option);
+    e.target.elements.option.value = '';
+    renderApp();
+  }
 };
 
-const decrement = () => {
-  currentCount--;
-  renderCounterApp();
+const onRemoveAllClick = () => {
+  app.options = [];
+  renderApp();
 };
-
-const reset = () => {
-  currentCount = 0;
-  renderCounterApp();
-};
-
-//console.log(templateTwo);
 
 const appRoot = document.getElementById('app');
 
-const renderCounterApp = () => {
-  const templateTwo = (
-    <div>
-      <h1>Count: {currentCount} </h1>
-      <button onClick = { increment } > + 1 </button>
-      <button onClick = { reset } > RESET </button>
-      <button onClick = { decrement } > - 1 </button>
+const renderApp = () => {
+  const template = (
+    <div> 
+      <h1> { app.title } </h1> 
+      { app.subTitle && <p> {app.subTitle} </p> }
+      <p> { app.options.length > 0 ? 'Here are your options' : 'No options' } </p>
+      <p> { app.options.length } </p>
+      <button onClick={onRemoveAllClick}>Remove All</button>
+      <ol>
+        <li> one </li>
+        <li> two </li>
+      </ol>
+      <form onSubmit={onFormSubmit}>
+        <input type="text" name="option"/>
+        <button>Add Option</button>
+      </form>
     </div>
   );
-
-  ReactDOM.render(templateTwo, appRoot);
+  ReactDOM.render(template, appRoot);
 };
 
-renderCounterApp();
+renderApp();
