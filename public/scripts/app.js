@@ -51,46 +51,53 @@ var template = React.createElement(
 var currentCount = 0;
 
 var increment = function increment() {
-  return currentCount++;
+  currentCount++;
+  renderCounterApp();
 };
 
 var decrement = function decrement() {
-  return currentCount--;
+  currentCount--;
+  renderCounterApp();
 };
 
 var reset = function reset() {
-  return currentCount = 0;
+  currentCount = 0;
+  renderCounterApp();
 };
 
-var templateTwo = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    'Count: ',
-    currentCount,
-    ' '
-  ),
-  React.createElement(
-    'button',
-    { onClick: increment },
-    ' + 1 '
-  ),
-  React.createElement(
-    'button',
-    { onClick: reset },
-    ' RESET '
-  ),
-  React.createElement(
-    'button',
-    { onClick: decrement },
-    ' - 1 '
-  )
-);
-
-console.log(templateTwo);
+//console.log(templateTwo);
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+var renderCounterApp = function renderCounterApp() {
+  var templateTwo = React.createElement(
+    'div',
+    null,
+    React.createElement(
+      'h1',
+      null,
+      'Count: ',
+      currentCount,
+      ' '
+    ),
+    React.createElement(
+      'button',
+      { onClick: increment },
+      ' + 1 '
+    ),
+    React.createElement(
+      'button',
+      { onClick: reset },
+      ' RESET '
+    ),
+    React.createElement(
+      'button',
+      { onClick: decrement },
+      ' - 1 '
+    )
+  );
+
+  ReactDOM.render(templateTwo, appRoot);
+};
+
+renderCounterApp();

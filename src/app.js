@@ -21,28 +21,35 @@ const template = (
 let currentCount = 0;
 
 const increment = () => {
-  return currentCount++;
+  currentCount++;
+  renderCounterApp();
 };
 
 const decrement = () => {
-  return currentCount--;
+  currentCount--;
+  renderCounterApp();
 };
 
 const reset = () => {
-  return currentCount = 0;
+  currentCount = 0;
+  renderCounterApp();
 };
 
-const templateTwo = (
-  <div>
-    <h1>Count: {currentCount} </h1>
-    <button onClick = { increment } > + 1 </button>
-    <button onClick = { reset } > RESET </button>
-    <button onClick = { decrement } > - 1 </button>
-  </div>
-);
-
-console.log(templateTwo);
+//console.log(templateTwo);
 
 const appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+const renderCounterApp = () => {
+  const templateTwo = (
+    <div>
+      <h1>Count: {currentCount} </h1>
+      <button onClick = { increment } > + 1 </button>
+      <button onClick = { reset } > RESET </button>
+      <button onClick = { decrement } > - 1 </button>
+    </div>
+  );
+
+  ReactDOM.render(templateTwo, appRoot);
+};
+
+renderCounterApp();
