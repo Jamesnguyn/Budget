@@ -19,6 +19,12 @@ var onFormSubmit = function onFormSubmit(e) {
   }
 };
 
+var onMakeDecision = function onMakeDecision() {
+  var randomNum = Math.floor(Math.random() * app.options.length);
+  var selectedOption = app.options[randomNum];
+  alert(selectedOption);
+};
+
 var onRemoveAllClick = function onRemoveAllClick() {
   app.options = [];
   renderApp();
@@ -54,26 +60,15 @@ var renderApp = function renderApp() {
       ' '
     ),
     React.createElement(
-      'p',
-      null,
-      ' ',
-      app.options.length,
-      ' '
+      'button',
+      { disabled: app.options.length === 0, onClick: onMakeDecision },
+      'Choose'
     ),
     React.createElement(
       'button',
       { onClick: onRemoveAllClick },
       'Remove All'
     ),
-    numbers.map(function (number) {
-      return React.createElement(
-        'p',
-        { key: number },
-        'Number: ',
-        number * 2,
-        ' '
-      );
-    }),
     React.createElement(
       'ol',
       null,
