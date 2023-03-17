@@ -1,5 +1,3 @@
-console.log("App js running");
-
 const app = {
   title: 'Indecision App',
   subTitle: 'paragraph',
@@ -29,8 +27,6 @@ const onRemoveAllClick = () => {
 };
 
 const appRoot = document.getElementById('app');
-
-const numbers = [55, 101, 1000];
 
 const renderApp = () => {
   const template = (
