@@ -3,7 +3,7 @@ console.log("App js running");
 const app = {
   title: 'Indecision App',
   subTitle: 'paragraph',
-  options: ['One', 'Two'],
+  options: [],
 };
 
 const onFormSubmit = (e) => {
@@ -24,6 +24,8 @@ const onRemoveAllClick = () => {
 
 const appRoot = document.getElementById('app');
 
+const numbers = [55, 101, 1000];
+
 const renderApp = () => {
   const template = (
     <div> 
@@ -32,9 +34,17 @@ const renderApp = () => {
       <p> { app.options.length > 0 ? 'Here are your options' : 'No options' } </p>
       <p> { app.options.length } </p>
       <button onClick={onRemoveAllClick}>Remove All</button>
+      {
+        numbers.map( (number) => {
+          return <p key={number}>Number: {number*2} </p>;
+        })
+      }
       <ol>
-        <li> one </li>
-        <li> two </li>
+      {
+        app.options.map( (string) => {
+          return <li key={string}> {string} </li>;
+        })
+      }
       </ol>
       <form onSubmit={onFormSubmit}>
         <input type="text" name="option"/>

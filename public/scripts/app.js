@@ -5,7 +5,7 @@ console.log("App js running");
 var app = {
   title: 'Indecision App',
   subTitle: 'paragraph',
-  options: ['One', 'Two']
+  options: []
 };
 
 var onFormSubmit = function onFormSubmit(e) {
@@ -25,6 +25,8 @@ var onRemoveAllClick = function onRemoveAllClick() {
 };
 
 var appRoot = document.getElementById('app');
+
+var numbers = [55, 101, 1000];
 
 var renderApp = function renderApp() {
   var template = React.createElement(
@@ -63,19 +65,27 @@ var renderApp = function renderApp() {
       { onClick: onRemoveAllClick },
       'Remove All'
     ),
+    numbers.map(function (number) {
+      return React.createElement(
+        'p',
+        { key: number },
+        'Number: ',
+        number * 2,
+        ' '
+      );
+    }),
     React.createElement(
       'ol',
       null,
-      React.createElement(
-        'li',
-        null,
-        ' one '
-      ),
-      React.createElement(
-        'li',
-        null,
-        ' two '
-      )
+      app.options.map(function (string) {
+        return React.createElement(
+          'li',
+          { key: string },
+          ' ',
+          string,
+          ' '
+        );
+      })
     ),
     React.createElement(
       'form',
