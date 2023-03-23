@@ -3,9 +3,10 @@ class IndecisionApp extends React.Component {
     super(props);
     this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
     this.handlePickOption = this.handlePickOption.bind(this);
+    this.handleAddOption = this.handleAddOption.bind(this);
 
     this.state = {
-      options: ['1', '2', '4']
+      options: []
     }
   }
 
@@ -23,6 +24,20 @@ class IndecisionApp extends React.Component {
     alert(selectedOption);
   }
 
+  handleAddOption(option) {
+    if(!option){
+      return 'Enter Valid Value';
+    }
+    else if (this.state.options.indexOf(option) > -1){
+      return 'Option Already Exists';
+    }
+    this.setState( (prevState) => {
+      return {
+        options: prevState.options.concat(option) 
+      };
+    });
+  }
+
   render() {
     const title = 'Indecision App';
     const subTitle = 'this is subTitle';
@@ -38,7 +53,9 @@ class IndecisionApp extends React.Component {
           options={this.state.options}
           handleDeleteOptions={this.handleDeleteOptions}
         />
-        <AddOption />
+        <AddOption 
+          handleAddOption={this.handleAddOption}
+        />
       </div>
     );
   }
@@ -96,23 +113,34 @@ class Option extends React.Component {
 }
 
 class AddOption extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleAddOption = this.handleAddOption.bind(this);
+
+    this.state = {
+      error: undefined
+    };
+  }
+
   handleAddOption(e) {
     e.preventDefault();
-    const option = e.target.elements.option.value.trim();
 
-    if(option){
-      alert('added');
-    } 
+    const option = e.target.elements.option.value.trim();
+    const error = this.props.handleAddOption(option);
+
+    this.setState( () => {
+      return { error };
+    });
   }
 
   render(){
     return (
       <div>
-      <form onSubmit={this.handleAddOption}>
-        <input type="text" name="option" />
-        <button> +Add </button>
-      </form>
-
+      {this.state.error && <p>{this.state.error}</p>}
+        <form onSubmit={this.handleAddOption}>
+          <input type="text" name="option" />
+          <button> +Add </button>
+        </form>
       </div>
     );
   }
