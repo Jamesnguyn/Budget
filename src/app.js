@@ -11,6 +11,18 @@ class IndecisionApp extends React.Component {
     };
   }
 
+  componentDidMount() {
+    console.log('componentDidMount!');
+  }
+
+  componentDidUpdate(prevPropsm, prevState){
+    console.log('componentDidUpdate!');
+  }
+
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
+  }
+
   handleDeleteOptions() {
     this.setState( () => ({ options: [] }));
   }
@@ -155,7 +167,7 @@ class AddOption extends React.Component {
       {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.handleAddOption}>
           <input type="text" name="option" />
-          <button> +Add </button>
+          <button> Add Option </button>
         </form>
       </div>
     );
