@@ -14,4 +14,12 @@ const canDrink = (x) => {
   return true;
 }
 
-export { isAdult, canDrink };
+const isSenior = (x) => {
+  if( x < 65 ){
+    return false;
+  }
+
+  return true;
+}
+
+export { isAdult, canDrink, isSenior as default};

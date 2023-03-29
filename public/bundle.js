@@ -63,33 +63,35 @@
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__person__ = __webpack_require__(781);
-// import { square, add } from './utils.js';
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__person__ = __webpack_require__(1);
+// import subtract, { square, add } from './utils.js';
 
 // console.log('app.js is running');
 // console.log(square(4));
 // console.log(add(4, 4));
+// console.log(subtract(4, 4));
 
 
 
-console.log(__WEBPACK_IMPORTED_MODULE_0__person__["b" /* isAdult */](21));
-console.log(__WEBPACK_IMPORTED_MODULE_0__person__["a" /* canDrink */](21));
+let x = 21;
+console.log(__WEBPACK_IMPORTED_MODULE_0__person__["c" /* isAdult */](x));
+console.log(__WEBPACK_IMPORTED_MODULE_0__person__["a" /* canDrink */](x));
+console.log(__WEBPACK_IMPORTED_MODULE_0__person__["b" /* default */](x));
 
 /***/ }),
-
-/***/ 781:
+/* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return isAdult; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return isAdult; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return canDrink; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return isSenior; });
 const isAdult = (x) => {
   if(x < 18){
     return false;
@@ -106,8 +108,15 @@ const canDrink = (x) => {
   return true;
 }
 
+const isSenior = (x) => {
+  if( x < 65 ){
+    return false;
+  }
+
+  return true;
+}
+
 
 
 /***/ })
-
-/******/ });
+/******/ ]);
