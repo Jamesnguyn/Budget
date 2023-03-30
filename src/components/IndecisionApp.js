@@ -25,8 +25,6 @@ class IndecisionApp extends React.Component {
       if(options){
         this.setState( () => ({options}));
       }
-
-      this.setState( () => ({ options: options }));
     }
     catch (e) {
       // Do nothing
@@ -79,8 +77,8 @@ class IndecisionApp extends React.Component {
     return (
       <div>
         <Header subTitle={subTitle} />
-        <Action 
-          hasOptions={this.state.options.length > 0} 
+        <Action
+          hasOptions={this.state.options.length > 0}
           handlePickOption={this.handlePickOption}
         />
         <Options
