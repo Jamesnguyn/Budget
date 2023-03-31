@@ -1,12 +1,9 @@
 import React from "react";
 import Option from "./Option";
 
-const Options = (props) => {
-  return (
+const Options = (props) => (
     <div>
-    
       <button onClick={props.handleDeleteOptions}>REMOVE ALL</button>
-
       <ol>
         {
           props.options.map( (option) => (
@@ -18,9 +15,7 @@ const Options = (props) => {
           ))
         }
       </ol>
-
     </div>
-  );
-};
+);
 
 export default Options;
