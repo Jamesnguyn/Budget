@@ -10,7 +10,7 @@ const Header = (props) => (
 );
 
 Header.defaultProps = {
-  title: 'Indecision App'
+  title: 'What To Do'
 };
 
 export default Header;

@@ -67,7 +67,6 @@ class IndecisionApp extends React.Component {
   }
 
   render() {
-    const title = 'Indecision App';
     const subTitle = 'this is subTitle';
 
     return (
