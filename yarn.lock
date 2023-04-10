@@ -3335,6 +3335,11 @@
     "p-locate" "^2.0.0"
     "path-exists" "^3.0.0"
 
+"lodash-es@^4.2.1":
+  "integrity" "sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw=="
+  "resolved" "https://registry.npmjs.org/lodash-es/-/lodash-es-4.17.21.tgz"
+  "version" "4.17.21"
+
 "lodash.camelcase@^4.3.0":
   "integrity" "sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA=="
   "resolved" "https://registry.npmjs.org/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz"
@@ -3350,7 +3355,7 @@
   "resolved" "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz"
   "version" "4.5.0"
 
-"lodash@^4.17.14", "lodash@^4.17.2", "lodash@^4.17.4", "lodash@^4.2.0":
+"lodash@^4.17.14", "lodash@^4.17.2", "lodash@^4.17.4", "lodash@^4.2.0", "lodash@^4.2.1":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
   "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   "version" "4.17.21"
@@ -4655,6 +4660,16 @@
   dependencies:
     "balanced-match" "^1.0.0"
 
+"redux@^3.7.2":
+  "integrity" "sha512-pNqnf9q1hI5HHZRBkj3bAngGZW/JMCmexDlOxw4XagXY2o1327nHH54LoTjiPJ0gizoqPDRqWyX/00g0hD6w+A=="
+  "resolved" "https://registry.npmjs.org/redux/-/redux-3.7.2.tgz"
+  "version" "3.7.2"
+  dependencies:
+    "lodash" "^4.2.1"
+    "lodash-es" "^4.2.1"
+    "loose-envify" "^1.1.0"
+    "symbol-observable" "^1.0.3"
+
 "regenerate@^1.2.1":
   "integrity" "sha512-zrceR/XhGYU/d/opr2EKO7aRHUeiBI8qjtfHqADTwZd6Szfy16la6kqD0MIUs5z5hx6AaKa+PixpPrR289+I0A=="
   "resolved" "https://registry.npmjs.org/regenerate/-/regenerate-1.4.2.tgz"
@@ -5335,6 +5350,11 @@
     "mkdirp" "~0.5.1"
     "sax" "~1.2.1"
     "whet.extend" "~0.9.9"
+
+"symbol-observable@^1.0.3":
+  "integrity" "sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ=="
+  "resolved" "https://registry.npmjs.org/symbol-observable/-/symbol-observable-1.2.0.tgz"
+  "version" "1.2.0"
 
 "tapable@^0.2.7", "tapable@~0.2.5":
   "integrity" "sha512-2wsvQ+4GwBvLPLWsNfLCDYGsW6xb7aeC6utq2Qh0PFwgEy7K7dsma9Jsmb2zSQj7GvYAyUGSntLtsv++GmgL1A=="
