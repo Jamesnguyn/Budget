@@ -20,11 +20,9 @@ const addExpense = (
   }
 });
 
-const removeExpense = (id) => ({
-  type: 'REMOVE_EPXENSE',
-  expense: {
-    id: uuid(),
-  }
+const removeExpense = ({ id } = {}) => ({
+  type: 'REMOVE_EXPENSE',
+  id
 });
 
 // EXPENSES REDUCER
@@ -44,9 +42,7 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
         action.expense
       ];
     case 'REMOVE_EXPENSE':
-      return [
-
-      ];
+      return state.filter( ({ id }) => id !== action.id );
     default:
       return state;
   }
