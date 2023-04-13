@@ -534,6 +534,11 @@
   "resolved" "https://registry.npmjs.org/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz"
   "version" "6.18.0"
 
+"babel-plugin-syntax-object-rest-spread@^6.8.0":
+  "integrity" "sha512-C4Aq+GaAj83pRQ0EFgTvw5YO6T3Qz2KGrNRwIj9mSoNHVvdZY4KO2uA6HNtNXCw993iSZnckY1aLW8nOi8i4+w=="
+  "resolved" "https://registry.npmjs.org/babel-plugin-syntax-object-rest-spread/-/babel-plugin-syntax-object-rest-spread-6.13.0.tgz"
+  "version" "6.13.0"
+
 "babel-plugin-syntax-trailing-function-commas@^6.22.0":
   "integrity" "sha512-Gx9CH3Q/3GKbhs07Bszw5fPTlU+ygrOGfAhEt7W2JICwufpC4SuO0mG0+4NykPBSYPMJhqvVlDBU17qB1D+hMQ=="
   "resolved" "https://registry.npmjs.org/babel-plugin-syntax-trailing-function-commas/-/babel-plugin-syntax-trailing-function-commas-6.22.0.tgz"
@@ -763,6 +768,14 @@
   "version" "6.22.0"
   dependencies:
     "babel-plugin-syntax-flow" "^6.18.0"
+    "babel-runtime" "^6.22.0"
+
+"babel-plugin-transform-object-rest-spread@^6.23.0":
+  "integrity" "sha512-d765TwySvTEWS8a31U/Z0GWwr702U61+W2UQMCYepibSLamxKjHuITdTYl5gYZ3n1EW84AiURdQ2E8GHEp+GJg=="
+  "resolved" "https://registry.npmjs.org/babel-plugin-transform-object-rest-spread/-/babel-plugin-transform-object-rest-spread-6.23.0.tgz"
+  "version" "6.23.0"
+  dependencies:
+    "babel-plugin-syntax-object-rest-spread" "^6.8.0"
     "babel-runtime" "^6.22.0"
 
 "babel-plugin-transform-react-display-name@^6.23.0":
