@@ -89,6 +89,7 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
       return state;
   }
 };
+
 //FILTERS REDUCER
 const filtersReducerDefaultState = {
   text: '',
