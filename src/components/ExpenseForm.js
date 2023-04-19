@@ -61,14 +61,13 @@ export default class ExpenseForm extends React.Component {
             placeholder="Add a note for your expense(optional)"
             value={this.state.note}
             onChange={this.onNoteChange}
-          >
+          />
           <SingleDatePicker
             date={this.state.createdAt}
             onDateChange={this.onDateChange}
             focused={this.state.calendarFocused}
             onFocusChange={this.onFocusChange}
           />
-          </textarea>
           <button>Add Expense</button>
         </form>
       </div>
