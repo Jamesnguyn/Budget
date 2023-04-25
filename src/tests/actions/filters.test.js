@@ -1,4 +1,10 @@
-import { setStartDate, setEndDate, setTextFilter, sortByAmount, sortByDate } from "../../actions/filters";
+import { 
+  setStartDate, 
+  setEndDate, 
+  setTextFilter, 
+  sortByAmount, 
+  sortByDate 
+} from "../../actions/filters";
 import moment from "moment";
 
 test('set start date', () => {
