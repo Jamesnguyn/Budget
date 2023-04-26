@@ -5815,6 +5815,14 @@
     "prop-types" "^15.6.1"
     "warning" "^4.0.1"
 
+"react-test-renderer@^16.0.0":
+  "integrity" "sha512-f/9l+dPX0APz6EJ+VgyHfDHE1hSf+YDgqkkLYlBGHws8folEaebdx06hFdRslE2Pnr+yd8OuBhflORf27lWYmQ=="
+  "resolved" "https://registry.npmjs.org/react-test-renderer/-/react-test-renderer-16.0.0.tgz"
+  "version" "16.0.0"
+  dependencies:
+    "fbjs" "^0.8.16"
+    "object-assign" "^4.1.1"
+
 "react@^0.14 || ^15.0.0 || ^16.0.0-alpha", "react@^0.14.0 || ^15.0.0", "react@^0.14.0 || ^15.0.0-0 || ^16.0.0-0", "react@^16.0.0-beta.5", "react@>=0.14", "react@>=15", "react@16.0.0":
   "integrity" "sha512-9lay736NuQpSpNwkxcqHOD/Jswpi/C5C7TYqHU9Xi19OEM+3LEkULYsUc3E65W+Sv3AyoVi2ZovCuXi2Ifz1MQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-16.0.0.tgz"
