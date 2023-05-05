@@ -23,6 +23,10 @@ database.ref().set({
     city: 'San Diego',
     country: 'United States'
   }
+}).then(() => {
+  console.log('data is saved!');
+}).catch((e) => {
+  console.log('failed', e);
 });
 
 // database.ref().set('my data');
@@ -33,6 +37,10 @@ database.ref('location/city').set('New York');
 const attributes = {
   height: 69,
   wieght: 165
-};
+}
 
-database.ref('attributes').set(attributes);
+database.ref('attributes').set(attributes).then(() => {
+  console.log('data is added!');
+}).catch((e) => {
+  console.log('failed', e);
+});
