@@ -15,32 +15,66 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref().set({
-  name: 'James',
-  age: 25,
-  isSingle: false,
-  location: {
-    city: 'San Diego',
-    country: 'United States'
-  }
-}).then(() => {
-  console.log('data is saved!');
-}).catch((e) => {
-  console.log('failed', e);
-});
+database.ref().on('value', (snapshot) => {
+    const val = snapshot.val();
+    console.log(` ${val.name} is a ${val.job.title} at ${val.job.company}.`);
+  })
 
-// database.ref().set('my data');
+// const onValueChange = database.ref().on('value', (snapshot) => {
+//   console.log(snapshot.val());
+// }, (e) => {
+//   console.log('Error with data fetching', e);
+// });
 
-database.ref('age').set(26);
-database.ref('location/city').set('New York');
+// setTimeout(() => {
+//   database.ref('age').set(29);
+// }, 3500);
 
-const attributes = {
-  height: 69,
-  wieght: 165
-}
+// setTimeout(() => {
+//   database.ref().off(onValueChange);
+// }, 7000);
 
-database.ref('attributes').set(attributes).then(() => {
-  console.log('data is added!');
-}).catch((e) => {
-  console.log('failed', e);
-});
+// setTimeout(() => {
+//   database.ref('age').set(30);
+// }, 10500);
+
+// database.ref()
+//   .once('value')
+//   .then((snapshot) => {
+//     const val = snapshot.val();
+//     console.log(val);
+//   }).catch((e) => {
+//     console.log('Error fetching data', e);
+//   });
+
+// database.ref().set({
+//   name: 'James',
+//   age: 25,
+//   stressLevel: 6,
+//   job: {
+//     title: 'Software Engineer',
+//     company: 'Google'
+//   },
+//   location: {
+//     city: 'San Diego',
+//     country: 'United States'
+//   }
+// }).then(() => {
+//   console.log('data is saved!');
+// }).catch((e) => {
+//   console.log('failed', e);
+// });
+
+// database.ref().update({
+//   stressLevel: 9,
+//   'job/company': 'Amazon',
+//   'location/city': 'Seattle'
+// });
+
+// database.ref('isSingle')
+//   .remove()
+//   .then(() => {
+//     console.log('data removed');
+//   }).catch((e) => {
+//     console.log('did not remove data', e);
+//   });
