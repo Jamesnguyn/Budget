@@ -15,10 +15,28 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref().on('value', (snapshot) => {
-    const val = snapshot.val();
-    console.log(` ${val.name} is a ${val.job.title} at ${val.job.company}.`);
-  })
+database.ref('expenses').push({
+  description: 'rent',
+  notes: '',
+  amount: 150000,
+  createdAt: 0
+});
+
+database.ref('expenses').push({
+  description: 'credit card',
+  notes: '',
+  amount: 100000,
+  createdAt: 1
+});
+
+database.ref('expenses').push({
+  description: 'gas',
+  notes: '',
+  amount: 50000,
+  createdAt: 2
+});
+
+// database.ref('notes/-NUyxlgpN7xTXrrfUM9T').remove();
 
 // const onValueChange = database.ref().on('value', (snapshot) => {
 //   console.log(snapshot.val());
