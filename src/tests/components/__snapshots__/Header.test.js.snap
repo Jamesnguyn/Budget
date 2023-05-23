@@ -11,7 +11,7 @@ exports[`render header 1`] = `
     exact={true}
     to="/"
   >
-    dashboard 
+    Dashboard
   </NavLink>
   <NavLink
     activeClassName="is-active"
